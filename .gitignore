@@ -1,0 +1,28 @@
+# Whitelist approach: Ignore everything except deployment assets
+
+# Ignore everything by default
+*
+
+# Whitelist .gitignore itself
+!.gitignore
+
+# Whitelist root index.html
+!index.html
+
+# Whitelist drafts directory structure
+!drafts/
+!drafts/website/
+!drafts/website/*/
+
+# Whitelist HTML files in website drafts
+!drafts/website/**/*.html
+
+# Whitelist image assets
+!drafts/website/**/*.png
+!drafts/website/**/*.jpg
+!drafts/website/**/*.jpeg
+!drafts/website/**/*.gif
+!drafts/website/**/*.svg
+
+# Note: This excludes CLAUDE.md, research files, Twitter/blog drafts,
+# and all other non-deployment assets from git tracking

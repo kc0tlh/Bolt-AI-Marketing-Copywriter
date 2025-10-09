@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolt Marketing Drafts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bolt-bg-primary: #0f0f0f;
+            --bolt-bg-secondary: #1a1a1a;
+            --alpha-white-100: rgba(255, 255, 255, 1);
+            --alpha-white-75: rgba(255, 255, 255, 0.75);
+            --alpha-white-60: rgba(255, 255, 255, 0.6);
+            --alpha-white-10: rgba(255, 255, 255, 0.1);
+            --accent-600: #1488FC;
+            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-display);
+            background: var(--bolt-bg-primary);
+            color: var(--alpha-white-100);
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--alpha-white-100);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--alpha-white-60);
+            margin-bottom: 48px;
+        }
+
+        .page-list {
+            list-style: none;
+        }
+
+        .page-item {
+            background: var(--bolt-bg-secondary);
+            border: 1px solid var(--alpha-white-10);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .page-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-600);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--alpha-white-100);
+            margin-bottom: 8px;
+        }
+
+        .page-description {
+            font-size: 16px;
+            color: var(--alpha-white-60);
+        }
+
+        .arrow {
+            color: var(--accent-600);
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bolt Marketing Drafts</h1>
+        <p class="subtitle">Working drafts for marketing pages and campaigns</p>
+
+        <ul class="page-list">
+            <li class="page-item">
+                <a href="drafts/website/Bolt VS Lovable Landing Page/bolt-vs-lovable-v2.html" class="page-link">
+                    <div class="page-title">Bolt vs Lovable Landing Page <span class="arrow">→</span></div>
+                    <div class="page-description">Comparison landing page: Bolt vs Lovable</div>
+                </a>
+            </li>
+
+            <li class="page-item">
+                <a href="drafts/website/Bolt VS Replit Landing Page/bolt-vs-replit.html" class="page-link">
+                    <div class="page-title">Bolt vs Replit Landing Page <span class="arrow">→</span></div>
+                    <div class="page-description">Comparison landing page: Bolt vs Replit</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

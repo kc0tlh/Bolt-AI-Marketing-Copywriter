@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovable vs Bolt: Why 8M+ Builders Switch to Bolt | 98% Fewer Errors</title>
+    <meta name="description" content="Comparing Lovable vs Bolt? Discover why builders switch: Bolt vs Lovable features include Claude Code (98% fewer errors), enterprise infrastructure, and unlimited scale. No 60-70% completion wall.">
+    <link rel="canonical" href="https://bolt.new/bolt-vs-lovable">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bolt vs. Lovable: Why 8M+ Builders Choose Bolt">
+    <meta property="og:description" content="Stop wasting credits on error loops. Bolt's frontier AI agents deliver 98% fewer errors and unlimited scale.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Lovable vs Bolt Comparison",
+      "description": "Comparing Lovable vs Bolt? Discover why builders switch: Bolt vs Lovable features include Claude Code (98% fewer errors), enterprise infrastructure, and unlimited scale.",
+      "url": "https://bolt.new/bolt-vs-lovable",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bolt.new"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lovable vs Bolt",
+          "item": "https://bolt.new/bolt-vs-lovable"
+        }]
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "What's the main difference between Lovable and Bolt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main difference is AI quality and infrastructure. Bolt uses frontier AI agents (Claude Code, Codex) backed by $35B+ investment, resulting in 98% fewer errors compared to Lovable's homerolled agents. Bolt also uses enterprise-grade infrastructure (Netlify, Supabase) trusted by Fortune 500 companies, while Lovable relies on homerolled hosting with reliability issues."
+          }
+        },{
+          "@type": "Question",
+          "name": "Why do Lovable users switch to Bolt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lovable users switch to Bolt to escape three main pain points: 1) Error loops that waste credits - Lovable's AI gets stuck in circular conversations while Bolt's Claude Code fixes issues on the first try. 2) The 60-70% completion wall - Lovable projects stall at moderate complexity while Bolt handles unlimited scale. 3) Credit burn on AI mistakes - Lovable charges for its agent's hallucinations while Bolt's professional AI reduces token waste by up to 90%."
+          }
+        },{
+          "@type": "Question",
+          "name": "Can Bolt handle larger projects than Lovable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bolt is capable of handling 1,000x larger projects than Lovable. While Lovable users report hitting a 60-70% completion wall where projects stall, Bolt's frontier AI (Claude Code, Codex) maintains context across large codebases and handles sophisticated logic. Bolt is built on enterprise infrastructure (Netlify, Supabase) that scales to millions of users, making it production-ready from day one."
+          }
+        },{
+          "@type": "Question",
+          "name": "Does Bolt have fewer errors than Lovable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bolt delivers 98% fewer errors compared to Lovable's homerolled agents. This is because Bolt uses frontier AI agents like Claude Code and Codex, backed by $35B+ in R&D investment from leading AI labs. These professional-grade agents autonomously debug issues and fix them on the first try, eliminating the error loops and hallucinations common with Lovable's homerolled AI."
+          }
+        },{
+          "@type": "Question",
+          "name": "What infrastructure does Bolt use compared to Lovable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bolt uses enterprise-grade infrastructure: Netlify for hosting (trusted by 72% of Fortune 500) and Supabase for databases, authentication, and storage. This infrastructure auto-configures as you build and scales to millions of users. Lovable uses homerolled hosting which has experienced deployment failures and reliability issues. While Lovable does use Supabase for databases, their hosting infrastructure is not enterprise-grade."
+          }
+        },{
+          "@type": "Question",
+          "name": "Can I edit code directly in Bolt vs Lovable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bolt provides a full IDE with both visual and code editing capabilities - you can 'code when you want, prompt when you don't.' Lovable only offers a chat-only interface with no direct code access. This means in Bolt, you can fix issues yourself, customize implementations, and have full control over your codebase, while Lovable locks you into conversational prompting only."
+          }
+        }]
+      }
+    }
+    </script>
+
+    <style>
+        /* ========================================
+           DESIGN SYSTEM - Extracted from Enterprise Page
+           ======================================== */
+
+        :root {
+            /* Colors - Bolt Design System */
+            --bolt-ds-surface: #0f0f0f;
+            --bolt-bg-primary: #0f0f0f;
+            --bolt-bg-secondary: #1a1a1a;
+            --bolt-bg-tertiary: #252525;
+            --neutral-900: #171717;
+            --neutral-950: #0a0a0a;
+
+            /* Alpha White System */
+            --alpha-white-100: rgba(255, 255, 255, 1);
+            --alpha-white-90: rgba(255, 255, 255, 0.9);
+            --alpha-white-75: rgba(255, 255, 255, 0.75);
+            --alpha-white-70: rgba(255, 255, 255, 0.7);
+            --alpha-white-60: rgba(255, 255, 255, 0.6);
+            --alpha-white-40: rgba(255, 255, 255, 0.4);
+            --alpha-white-20: rgba(255, 255, 255, 0.2);
+            --alpha-white-10: rgba(255, 255, 255, 0.1);
+            --alpha-white-5: rgba(255, 255, 255, 0.05);
+
+            /* Accent Colors */
+            --accent-600: #1488FC;
+            --accent-700: #0066FF;
+            --bolt-accent: #1488FC;
+            --bolt-accent-highlight: #4BA3FF;
+
+            /* Semantic Colors */
+            --bolt-success: #00D084;
+            --bolt-warning: #FFB800;
+            --bolt-error: #FF4757;
+            --lovable-color: #E94560;
+
+            /* Text Colors */
+            --neutral-0: #ffffff;
+            --text-primary: var(--alpha-white-100);
+            --text-secondary: var(--alpha-white-75);
+            --text-tertiary: var(--alpha-white-60);
+
+            /* Spacing System (8px base) */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 40px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --spacing-4xl: 80px;
+            --spacing-5xl: 96px;
+            --spacing-6xl: 128px;
+
+            /* Typography Scale */
+            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* ========================================
+           GLOBAL RESET & BASE STYLES
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bolt-ds-surface);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+
+        /* ========================================
+           ANIMATED BACKGROUND - Hero Only
+           ======================================== */
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-ellipse {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(20, 136, 252, 0.35) 0%, rgba(20, 136, 252, 0.15) 40%, transparent 70%);
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-ellipse-one {
+            width: 800px;
+            height: 800px;
+            top: -400px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .hero-ellipse-two {
+            width: 600px;
+            height: 600px;
+            top: -300px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        .hero-ellipse-three {
+            width: 700px;
+            height: 700px;
+            bottom: -350px;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.6;
+            }
+            25% {
+                transform: translate(30px, -30px) scale(1.1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+                opacity: 0.5;
+            }
+            75% {
+                transform: translate(40px, 10px) scale(1.05);
+                opacity: 0.7;
+            }
+        }
+
+
+        /* ========================================
+           CONTAINER & LAYOUT
+           ======================================== */
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+        }
+
+        /* ========================================
+           TYPOGRAPHY SYSTEM
+           ======================================== */
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        .display {
+            font-size: 64px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .h1 {
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .h2 {
+            font-size: 36px;
+            line-height: 1.3;
+        }
+
+        .h3 {
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        .body-large {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .body {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .body-small {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .display { font-size: 40px; }
+            .h1 { font-size: 32px; }
+            .h2 { font-size: 28px; }
+            .h3 { font-size: 22px; }
+            .body-large { font-size: 18px; }
+            .body { font-size: 16px; }
+        }
+
+        /* ========================================
+           BUTTON COMPONENT
+           ======================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 48px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background: var(--accent-600);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-700);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(20, 136, 252, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--alpha-white-10);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--alpha-white-20);
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                width: 100%;
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+
+        .hero {
+            position: relative;
+            padding: 70px 0 var(--spacing-3xl);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 208, 132, 0.1);
+            border: 1px solid rgba(0, 208, 132, 0.3);
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--bolt-success);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-md);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xl);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-trust {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 0 var(--spacing-3xl);
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                display: none;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+        }
+
+        /* ========================================
+           TRUST BAND
+           ======================================== */
+
+        .trust-band {
+            padding: var(--spacing-2xl) 0;
+            background: var(--bolt-bg-secondary);
+            border-top: 1px solid var(--alpha-white-10);
+            border-bottom: 1px solid var(--alpha-white-10);
+        }
+
+        .trust-band-text {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-2xl);
+            flex-wrap: wrap;
+        }
+
+        .trust-logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            padding: 12px 24px;
+            background: var(--alpha-white-5);
+            border-radius: 8px;
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .trust-supporting {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-top: var(--spacing-md);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========================================
+           LOGO SLIDER SECTION
+           ======================================== */
+
+        .logo-slider-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--bolt-bg-primary);
+            overflow: hidden;
+        }
+
+        .logo-slider-header {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            font-weight: 600;
+        }
+
+        .logo-slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .logo-slider-container::before,
+        .logo-slider-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .logo-slider-container::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bolt-bg-primary) 0%, transparent 100%);
+        }
+
+        .logo-slider-container::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bolt-bg-primary) 0%, transparent 100%);
+        }
+
+        .logo-slider-track {
+            display: flex;
+            gap: 80px;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .logo-slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .company-logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .company-logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0) invert(1);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .company-logo:hover img {
+            opacity: 1;
+        }
+
+        /* Fallback text logos */
+        .company-logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        .company-logo:hover .company-logo-text {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .logo-slider-container::before,
+            .logo-slider-container::after {
+                width: 100px;
+            }
+
+            .logo-slider-track {
+                gap: 60px;
+            }
+
+            .company-logo {
+                height: 32px;
+            }
+
+            .company-logo-text {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================
+           PAIN POINT SECTIONS
+           ======================================== */
+
+        .pain-section {
+            padding: var(--spacing-5xl) 0;
+        }
+
+        .pain-section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .pain-section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .pain-section-subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--accent-600);
+            text-align: left;
+            margin-top: 6px;
+            margin-left: 62%;
+            opacity: 0.9;
+        }
+
+        .pain-quote-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pain-quote-link:hover .pain-quote {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(233, 69, 96, 0.3);
+        }
+
+        .pain-quote-link:hover {
+            cursor: pointer;
+        }
+
+        .pain-point {
+            margin-bottom: var(--spacing-5xl);
+        }
+
+        .pain-point:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Alternating layout pattern */
+        .pain-point:nth-child(even) .pain-content {
+            flex-direction: row-reverse;
+        }
+
+        .pain-content {
+            display: flex;
+            gap: var(--spacing-3xl);
+            align-items: flex-start;
+        }
+
+        .pain-text {
+            flex: 1;
+        }
+
+        .pain-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pain-icon {
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            background: rgba(233, 69, 96, 0.1);
+            border-radius: 12px;
+            border: 2px solid var(--lovable-color);
+        }
+
+        .pain-heading h3 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        .pain-quote {
+            background: rgba(233, 69, 96, 0.05);
+            border-left: 4px solid var(--lovable-color);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 8px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .pain-quote-text {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--lovable-color);
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pain-quote-attribution {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            font-style: normal;
+        }
+
+        .pain-body {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .pain-body p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pain-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .pain-content,
+            .pain-point:nth-child(even) .pain-content {
+                flex-direction: column;
+            }
+
+            .pain-heading {
+                flex-direction: column;
+            }
+
+            .pain-heading h3 {
+                font-size: 26px;
+            }
+
+            .pain-quote-text {
+                font-size: 18px;
+            }
+
+            .pain-body {
+                font-size: 16px;
+            }
+        }
+
+        /* ========================================
+           SOLUTION HIGHLIGHT
+           ======================================== */
+
+        .solution-highlight {
+            background: linear-gradient(135deg, rgba(20, 136, 252, 0.05) 0%, rgba(0, 208, 132, 0.05) 100%);
+            border: 2px solid var(--accent-600);
+            border-radius: 16px;
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .solution-highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(20, 136, 252, 0.6);
+        }
+
+        .solution-highlight .bolt-logo {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            height: 20px;
+            width: auto;
+            opacity: 0.8;
+        }
+
+        .solution-highlight h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-600);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .solution-highlight p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+            padding-left: 0;
+            padding-top: 28px;
+        }
+
+        .solution-highlight strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           TOP 3 REASONS SECTION
+           ======================================== */
+
+        .reasons-section {
+            padding: var(--spacing-md) 0 var(--spacing-5xl);
+            background: var(--bolt-bg-secondary);
+        }
+
+        .reasons-handwritten-header {
+            font-family: 'Caveat', cursive;
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--accent-600);
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+
+        .reasons-header {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .reasons-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .reason-card {
+            background: var(--neutral-900);
+            border-radius: 12px;
+            padding: var(--spacing-2xl);
+            border: 1px solid var(--alpha-white-10);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: visible;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .reason-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.3;
+            min-height: 62px;
+        }
+
+        .reason-number {
+            position: absolute;
+            top: -36px;
+            left: -18px;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 1;
+            color: var(--accent-600);
+            z-index: 10;
+        }
+
+        .reason-stat {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--bolt-success);
+            margin-bottom: var(--spacing-xs);
+            line-height: 1;
+        }
+
+        .reason-stat-label {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reason-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .reason-description p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .reason-description strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .reason-cta {
+            font-size: 14px;
+            color: var(--accent-600);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .reason-cta:hover {
+            gap: 8px;
+        }
+
+        @media (max-width: 968px) {
+            .reasons-handwritten-header {
+                font-size: 32px;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           COMPARISON MATRIX
+           ======================================== */
+
+        .comparison-section {
+            padding: var(--spacing-5xl) 0;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .comparison-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .comparison-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table {
+            background: var(--neutral-900);
+            border-radius: 16px;
+            overflow: visible;
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: var(--bolt-bg-primary);
+            border-bottom: 2px solid var(--alpha-white-10);
+            font-weight: 700;
+            font-size: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .table-header div:nth-child(2),
+        .table-header div:nth-child(3) {
+            text-align: center;
+        }
+
+        .category-divider {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--bolt-bg-secondary);
+            border-top: 1px solid var(--alpha-white-10);
+            border-bottom: 1px solid var(--alpha-white-10);
+        }
+
+        .category-divider h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--alpha-white-10);
+            transition: background 0.2s ease;
+        }
+
+        .table-row:hover {
+            background: var(--alpha-white-5);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row.featured {
+            background: rgba(20, 136, 252, 0.03);
+        }
+
+        .feature-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--text-primary);
+        }
+
+        .feature-subtitle {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .comparison-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .icon-check {
+            color: var(--bolt-success);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .icon-x {
+            color: var(--lovable-color);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .comparison-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .comparison-text.bold {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 968px) {
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+            }
+
+            .table-header div:nth-child(2),
+            .table-header div:nth-child(3) {
+                text-align: left;
+            }
+
+            .table-header div:nth-child(1) {
+                font-size: 18px;
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+
+        /* ========================================
+           TOOLTIP SYSTEM
+           ======================================== */
+
+        .feature-name-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: help;
+            padding: 0;
+            color: var(--text-tertiary);
+            transition: color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .info-icon:hover {
+            color: var(--accent-600);
+        }
+
+        .info-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            max-width: 90vw;
+            background: var(--neutral-900);
+            border: 1px solid var(--alpha-white-20);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            pointer-events: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--neutral-900);
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-top-color: var(--neutral-900);
+            margin-top: -1px;
+        }
+
+        .info-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 968px) {
+            .tooltip {
+                width: 280px;
+                font-size: 13px;
+            }
+        }
+
+        .comparison-updated {
+            text-align: right;
+            font-size: 13px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: var(--spacing-md);
+        }
+
+        /* ========================================
+           SOCIAL PROOF SECTION
+           ======================================== */
+
+        .social-proof {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bolt-bg-secondary);
+        }
+
+        .social-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .social-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: 0;
+        }
+
+        .stat-card {
+            background: var(--neutral-900);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--bolt-success);
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-description {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        .partners-section {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            background: var(--bolt-bg-primary);
+            border-radius: 12px;
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .partners-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-2xl);
+            flex-wrap: wrap;
+        }
+
+        .partner-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .partner-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .partner-description {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            max-width: 200px;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 968px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+
+        .final-cta {
+            padding: var(--spacing-5xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(20, 136, 252, 0.2) 0%, rgba(12, 81, 150, 0) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .final-cta-subtitle strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .final-cta-trust {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .features-list {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--alpha-white-5);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .features-list-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .features-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-sm);
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .features-items li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .features-items li::before {
+            content: '✓';
+            color: var(--bolt-success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .final-note {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: var(--spacing-md);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .final-cta-subtitle {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+
+            .features-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-0 { margin-bottom: 0; }
+        .mb-1 { margin-bottom: var(--spacing-xs); }
+        .mb-2 { margin-bottom: var(--spacing-sm); }
+        .mb-3 { margin-bottom: var(--spacing-md); }
+        .mb-4 { margin-bottom: var(--spacing-lg); }
+        .mb-5 { margin-bottom: var(--spacing-xl); }
+
+        .mt-0 { margin-top: 0; }
+        .mt-1 { margin-top: var(--spacing-xs); }
+        .mt-2 { margin-top: var(--spacing-sm); }
+        .mt-3 { margin-top: var(--spacing-md); }
+        .mt-4 { margin-top: var(--spacing-lg); }
+        .mt-5 { margin-top: var(--spacing-xl); }
+
+        /* ========================================
+           HEADER NAVIGATION
+           ======================================== */
+
+        .main-header {
+            background: var(--bolt-bg-primary);
+            border-bottom: 1px solid var(--alpha-white-10);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .header-nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .header-dropdown-icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        .header-social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: 32px;
+            padding-left: 32px;
+            border-left: 1px solid var(--alpha-white-10);
+        }
+
+        .header-social a {
+            color: var(--text-tertiary);
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-social a:hover {
+            color: var(--text-primary);
+        }
+
+        .header-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 968px) {
+            .header-nav {
+                gap: 20px;
+            }
+
+            .header-social {
+                margin-left: 20px;
+                padding-left: 20px;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-nav,
+            .header-social {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Header -->
+<header class="main-header">
+    <div class="header-content">
+        <a href="#" class="header-logo">
+            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt">
+        </a>
+
+        <div style="display: flex; align-items: center;">
+            <nav class="header-nav">
+                <a href="#">Community</a>
+                <a href="#">Enterprise</a>
+                <a href="#">
+                    Resources
+                    <svg class="header-dropdown-icon" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#">Careers</a>
+                <a href="#">Pricing</a>
+            </nav>
+
+            <div class="header-social">
+                <a href="#" aria-label="Discord">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M16.942 4.557a13.498 13.498 0 0 0-3.328-1.032.05.05 0 0 0-.053.025c-.144.257-.303.593-.414.856a12.462 12.462 0 0 0-3.744 0 8.68 8.68 0 0 0-.42-.856.052.052 0 0 0-.053-.025 13.467 13.467 0 0 0-3.328 1.032.047.047 0 0 0-.021.019C2.356 7.847 1.636 11.05 1.925 14.207a.056.056 0 0 0 .021.038 13.576 13.576 0 0 0 4.086 2.066.052.052 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.051.051 0 0 0-.028-.071 8.916 8.916 0 0 1-1.274-.607.051.051 0 0 1-.005-.085c.086-.064.171-.131.253-.198a.05.05 0 0 1 .052-.007c2.672 1.22 5.567 1.22 8.207 0a.05.05 0 0 1 .053.007c.082.067.167.134.253.198a.051.051 0 0 1-.004.085 8.365 8.365 0 0 1-1.275.606.051.051 0 0 0-.027.072c.24.466.515.91.817 1.329a.051.051 0 0 0 .056.019 13.536 13.536 0 0 0 4.091-2.066.052.052 0 0 0 .021-.037c.347-3.653-.582-6.826-2.463-9.632a.04.04 0 0 0-.021-.02Z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M4.339 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5ZM2.5 18.5h3.75V9H2.5v9.5Zm5.625 0h3.75v-5.062c0-1.376.261-2.708 1.968-2.708 1.683 0 1.707 1.572 1.707 2.793v4.977H19.5v-5.612c0-2.843-.613-5.028-3.933-5.028-1.596 0-2.667.876-3.104 1.705h-.044V9H8.75v9.5h-.625Z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11.917 8.743 17.808 2h-1.398l-5.114 5.852L7.035 2H2l6.177 8.985L2 18h1.398l5.4-6.179L13.365 18H18.4l-6.483-9.257Zm-1.911 2.188-.626-.894-4.98-7.127h2.143l4.02 5.75.626.895 5.226 7.472h-2.143l-4.266-6.096Z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Reddit">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0a10 10 0 1 0 10 10A10 10 0 0 0 10 0Zm4.8 10.667a1.533 1.533 0 1 1 0-3.067 1.533 1.533 0 0 1 0 3.067Zm-9.6 0a1.533 1.533 0 1 1 0-3.067 1.533 1.533 0 0 1 0 3.067Zm8.267 3.566a.467.467 0 0 1-.8.334 4.933 4.933 0 0 1-5.334 0 .467.467 0 1 1-.466-.8 4.133 4.133 0 0 0 3.066-.8 4.133 4.133 0 0 0 3.534.466Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Force scroll to top on page load/refresh
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('beforeunload', function () {
+        window.scrollTo(0, 0);
+    });
+    window.addEventListener('load', function () {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 0);
+    });
+</script>
+
+<!-- Hero Section -->
+<section class="hero">
+    <!-- Animated Background -->
+    <div class="hero-background">
+        <div class="hero-ellipse hero-ellipse-one"></div>
+        <div class="hero-ellipse hero-ellipse-two"></div>
+        <div class="hero-ellipse hero-ellipse-three"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                Bolt: The #1 Professional Vibe Coding Platform
+            </div>
+
+            <h1>Bolt vs Lovable: Why 8M+ Builders Choose Bolt</h1>
+
+            <p class="hero-subtitle">
+                Built for Product Managers, Entrepreneurs & Agency Owners
+            </p>
+
+            <div class="hero-stats">
+                <span><strong>98% fewer errors</strong></span>
+                <span>•</span>
+                <span><strong>1,000x larger projects</strong></span>
+                <span>•</span>
+                <span><strong>Trusted by 72% of Fortune 500</strong></span>
+            </div>
+
+            <div class="hero-ctas">
+                <a href="https://bolt.new" class="btn btn-primary">Build Without Error Loops</a>
+                <a href="https://x.com/boltdotnew/status/1973063093849567591" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 6.5L14 10L8 13.5V6.5Z" fill="currentColor"/>
+                    </svg>
+                    See How It Works
+                </a>
+            </div>
+
+            <p class="hero-trust">
+                No credit card required • Start building in 60 seconds
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Top 3 Reasons Section -->
+<section class="reasons-section">
+    <div class="container">
+        <h2 class="reasons-handwritten-header">Top 3 reasons builders switch to Bolt:</h2>
+
+        <div class="reasons-grid">
+            <!-- Reason 1 -->
+            <div class="reason-card">
+                <span class="reason-number">1</span>
+                <h3>Professional Agents Reduce Error Loops 98%</h3>
+                <div class="reason-stat-label" style="margin-top: 16px; margin-bottom: 16px;">
+                    <img src="ClaudeCode.png" alt="Claude Code AI logo - Bolt vs Lovable frontier AI comparison showing professional-grade agents" style="height: 50px;" />
+                </div>
+                <div class="reason-description">
+                    <p>Lovable's homerolled agent often introduces errors. Bolt uses professional grade AI agents.</p>
+
+                    <ul style="margin-top: 16px; line-height: 1.8;">
+                        <li>Autonomous debugging to fix issues</li>
+                        <li>Reduce circular conversations and hallucinated solutions</li>
+                        <li>Fewer credits needed for debugging</li>
+                    </ul>
+                </div>
+                <a href="https://bolt.new/blog/bolt-v2" target="_blank" class="reason-cta">See How It Works →</a>
+            </div>
+
+            <!-- Reason 2 -->
+            <div class="reason-card">
+                <span class="reason-number">2</span>
+                <h3>Auto-configured Backend Infrastructure</h3>
+                <div class="reason-stat-label" style="margin-top: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt Cloud logo - Enterprise infrastructure comparison Lovable vs Bolt hosting and backend" style="height: 32px;" />
+                    <span style="font-size: 28px; font-weight: 800; color: var(--alpha-white-100); font-family: var(--font-display); line-height: 1;">Cloud</span>
+                </div>
+                <div class="reason-description">
+                    <p>Lovable's homerolled hosting is not enterprise-grade. Bolt builds on infrastructure that scales.</p>
+
+                    <ul style="margin-top: 16px; line-height: 1.8;">
+                        <li>Auto-configured hosting, database, login, payments, integrations & more!</li>
+                        <li>Built-in SEO optimization</li>
+                        <li>One-click publish, scale to millions</li>
+                    </ul>
+                </div>
+                <a href="https://bolt.new/blog/bolt-cloud" target="_blank" class="reason-cta">Learn About Bolt Cloud →</a>
+            </div>
+
+            <!-- Reason 3 -->
+            <div class="reason-card">
+                <span class="reason-number">3</span>
+                <h3>Design System & UI Library Support</h3>
+                <div class="reason-stat-label" style="margin-top: 16px; margin-bottom: 16px;">
+                    <img src="designsystem.png" alt="Custom design system icon - Bolt vs Lovable UI customization and branding comparison" style="height: 72px;" />
+                </div>
+                <div class="reason-description">
+                    <p>Import your company's design system. Build on-brand from day one. Essential for product teams.</p>
+
+                    <ul style="margin-top: 16px; line-height: 1.8;">
+                        <li>Custom UI component libraries imported from your npm registry</li>
+                        <li>Brand consistency across all projects</li>
+                        <li>Client-ready applications, no rework</li>
+                    </ul>
+                </div>
+                <a href="https://bolt.new/enterprise" target="_blank" class="reason-cta">Book a Design System Demo →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Logo Slider Section -->
+<section class="logo-slider-section">
+    <div class="container">
+        <p class="logo-slider-header">
+            Trusted by companies you know and love
+        </p>
+    </div>
+    <div class="logo-slider-container">
+        <div class="logo-slider-track">
+            <!-- First set of logos -->
+            <div class="company-logo">
+                <span class="company-logo-text">Google</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">HubSpot</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Salesforce</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Stripe</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Shopify</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">NBC Universal</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Mozilla</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Intel</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Accenture</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Meta</span>
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="company-logo">
+                <span class="company-logo-text">Google</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">HubSpot</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Salesforce</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Stripe</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Shopify</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">NBC Universal</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Mozilla</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Intel</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Accenture</span>
+            </div>
+            <div class="company-logo">
+                <span class="company-logo-text">Meta</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Matrix -->
+<section class="comparison-section" id="comparison">
+    <div class="container">
+        <div class="comparison-header">
+            <h2>Lovable vs Bolt: Feature by Feature</h2>
+            <p>Every capability that matters for building professional applications.</p>
+        </div>
+
+        <div class="comparison-table">
+            <div class="table-header">
+                <div>Feature</div>
+                <div>Bolt</div>
+                <div>Lovable</div>
+            </div>
+
+            <!-- Row 1: AI Agents -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">AI Agents</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Bolt gives you direct access to frontier AI agents developed with $35B+ in R&D investment from leading AI labs like Anthropic, OpenAI, and Google. These are the same professional-grade agents used by developers worldwide. Lovable uses a homemade agent built in-house, which lacks the sophistication, training data, and error-handling capabilities of frontier models. This leads to hallucinations, broken fixes, and wasted credits.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">The foundation of everything</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Claude Code, Codex, Gemini (Frontier AI)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Homerolled agents</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Automatic Error Handling -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Automatic Error Handling</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Bolt automatically runs and debugs your code in the background, identifying and fixing errors without human intervention. When issues occur, Bolt's AI agents analyze the problem, test solutions, and implement fixes, eliminating the error loops and circular conversations that plague homerolled agents. You spend your credits building features, not debugging AI mistakes.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Built right the first time</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Autonomous debugging, 98% fewer errors</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text">Error loops common</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Enterprise-Grade Hosting -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Hosting Infrastructure</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Bolt Cloud uses enterprise-grade hosting powered by Netlify: the same infrastructure trusted by Uber, Twilio, and Stripe to scale to millions of users and billions in revenue. Your products benefit from automatic CDN distribution, edge caching, and instant rollbacks. Lovable's homerolled hosting infrastructure has experienced repeated deployment failures and lacks the reliability needed for professional applications.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Where your product lives</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Netlify (Enterprise-grade, trusted by Fortune 500)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text">Homerolled hosting (frequent deployment failures)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Project Complexity -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Project Scale & Complexity</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Lovable users frequently hit a 70% completion wall where projects stall as complexity increases. State management breaks, API integrations fail, and the AI loses context. Bolt handles unlimited project complexity. Build sophisticated applications with complex backends, third-party API integrations, advanced state management, and multi-service architectures without limitations. Bolt's frontier AI maintains full context across large codebases, enabling you to scale from prototype to millions of users.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">From prototype to millions</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Unlimited (1,000x larger projects)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">70% completion wall</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5: Direct Code Access -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Code Access & Control</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Bolt provides a full integrated development environment (IDE) directly in your browser (the same technology Bolt pioneered for years with WebContainers). You get both a visual preview and complete code editor access, allowing you to "code when you want, prompt when you don't." Debug issues yourself, customize implementations, review every line, and maintain full control over your codebase. Lovable locks you into a chat-only interface with no direct code access, forcing you to rely entirely on conversational prompting even when you could fix issues faster yourself.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Can you fix things yourself?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Full IDE (visual + code editor)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text">Chat-only interface</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 6: Design System Support -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Custom Design Systems</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Bolt integrates directly with your company's internal UI component library or design system maintained by your engineering department. Import custom packages from your private npm registry, use your existing design tokens, components, and patterns, ensuring everything you build in Bolt is on-brand and ready to ship from day one. This is essential for product teams, agencies, and enterprises that need brand consistency across projects. Lovable offers only generic templates with no design system integration, forcing your engineering team to rebuild anything you create in Lovable before it can be used professionally.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Build on-brand from day one</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Full support for custom design systems</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Not available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-updated">Last updated: October 14th, 2025.</div>
+    </div>
+</section>
+
+<!-- Social Proof Section -->
+<section class="social-proof">
+    <div class="container">
+        <div class="social-header">
+            <h2>Join 8 Million Builders Worldwide</h2>
+            <p>Trusted by product teams, entrepreneurs, and agencies building the next generation of software.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">8M+</div>
+                <div class="stat-label">Builders Use Bolt</div>
+                <div class="stat-description">Founders, product managers, and agencies building without boundaries.</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">72%</div>
+                <div class="stat-label">of Fortune 500</div>
+                <div class="stat-description">Enterprise trust in Bolt's infrastructure and capabilities.</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">$35B+</div>
+                <div class="stat-label">AI Investment</div>
+                <div class="stat-description">Frontier AI models (Claude Code, Codex) backed by billions in R&D.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pain Point Narrative Section -->
+<section class="pain-section">
+    <div class="container">
+        <div class="pain-section-header">
+            <h2>Why Lovable Users Are Switching to Bolt</h2>
+            <p class="pain-section-subtitle">in their own words...</p>
+        </div>
+
+        <!-- Pain Point 1 -->
+        <div class="pain-point">
+            <div class="pain-content">
+                <div class="pain-text">
+                    <div class="pain-heading">
+                        <div>
+                            <h3>"Lovable Loops" That Waste Your Credits</h3>
+                        </div>
+                    </div>
+
+                    <a href="https://feedback.lovable.dev/p/frustrating-loop-of-never-fixing-errors-that-lovable-introduces" target="_blank" rel="nofollow noopener noreferrer" class="pain-quote-link">
+                        <div class="pain-quote">
+                            <p class="pain-quote-text">"Frustrating loop of (never) fixing errors... starts running around in circles, hallucinating, trying to apply changes in different ways and never getting it right."</p>
+                            <p class="pain-quote-attribution">from Lovable Feedback Forum</p>
+                        </div>
+                    </a>
+
+                    <div class="pain-body">
+                        <p>Lovable's homerolled AI agents trap you in costly cycles. The AI makes a mistake, tries to fix it, fails, and repeats, burning through your credits with zero progress.</p>
+
+                        <div class="solution-highlight">
+                            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt" class="bolt-logo">
+                            <p><strong>Bolt uses Claude Code and Codex</strong>: frontier AI backed by $35B+ investment. <strong>98% fewer errors.</strong> The AI fixes issues on the first try, systematically analyzing your codebase instead of hallucinating solutions. No more circular conversations. No more wasted credits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pain Point 2 -->
+        <div class="pain-point">
+            <div class="pain-content">
+                <div class="pain-text">
+                    <div class="pain-heading">
+                        <div>
+                            <h3>Lovable Often Hits a Wall at 70% Completion</h3>
+                        </div>
+                    </div>
+
+                    <a href="https://www.mikelundahl.com/2025/04/25/lovable-dev-review-great-for-mvps-not-for-replacing-devs/" target="_blank" rel="nofollow noopener noreferrer" class="pain-quote-link">
+                        <div class="pain-quote">
+                            <p class="pain-quote-text">"AI-generated apps are more of a 60-70% solution... Lovable is more of a 'starter kit' than a long-term platform that struggles with sophisticated logic and scalability."</p>
+                            <p class="pain-quote-attribution">from Lovable User's Blog</p>
+                        </div>
+                    </a>
+
+                    <div class="pain-body">
+                        <p>Lovable projects stall at 60-70% completion. Simple features work, but complex logic, state management, and scale break down. Users end up exporting to GitHub and hiring developers to finish.</p>
+
+                        <div class="solution-highlight">
+                            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt" class="bolt-logo">
+                            <p><strong>Bolt is built for unlimited scale.</strong> Claude Code's frontier AI handles sophisticated logic and maintains context across large codebases. Built on Netlify and Supabase (the same enterprise infrastructure scaling Uber and Stripe to millions). No walls. No exports. Just enterprise-grade applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pain Point 3 -->
+        <div class="pain-point">
+            <div class="pain-content">
+                <div class="pain-text">
+                    <div class="pain-heading">
+                        <div>
+                            <h3>Lovable Often Burns Through Credits on AI Mistakes</h3>
+                        </div>
+                    </div>
+
+                    <a href="https://feedback.lovable.dev/p/credits-waste-due-to-agent-going-into-error-loops" target="_blank" rel="nofollow noopener noreferrer" class="pain-quote-link">
+                        <div class="pain-quote">
+                            <p class="pain-quote-text">"A month's worth of credits used within a few hours... getting charged for the AI's own mistakes. Hours-long sessions with zero progress."</p>
+                            <p class="pain-quote-attribution">from Lovable Feedback Forum</p>
+                        </div>
+                    </a>
+
+                    <div class="pain-body">
+                        <p>Lovable charges you when its AI fails. Error loops, hallucinations, broken fixes. All consume your credits.</p>
+
+                        <div class="solution-highlight">
+                            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt" class="bolt-logo">
+                            <p><strong>Because Claude Code gets it right the first time, your credits build features, not debug AI mistakes.</strong> Planning Mode (a Claude Code feature) lets you strategize and debug without generating code, reducing token usage by up to 90%. You only pay for what you actually build.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section style="padding: var(--spacing-5xl) 0; background: var(--neutral-800);">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: var(--spacing-4xl);">
+            <h2 style="font-size: 42px; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--text-primary);">Frequently asked questions</h2>
+            <p class="body-large" style="color: var(--text-secondary);">Everything you need to know when comparing Bolt vs. Lovable</p>
+        </div>
+
+        <div style="max-width: 820px; margin: 0 auto;">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>What's the main difference between Lovable and Bolt?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        The main difference in the <strong style="color: var(--text-primary);">Lovable vs Bolt</strong> comparison is AI quality and infrastructure. <strong style="color: var(--text-primary);">Bolt uses frontier AI agents</strong> (Claude Code, Codex) backed by $35B+ investment, resulting in <strong style="color: var(--text-primary);">98% fewer errors</strong> compared to Lovable's homerolled agents.
+                    </p>
+                    <p>
+                        Bolt also uses <strong style="color: var(--text-primary);">enterprise-grade infrastructure</strong> (Netlify, Supabase) trusted by Fortune 500 companies, while Lovable relies on homerolled hosting with reliability issues.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Why do Lovable users switch to Bolt?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Lovable users switch to Bolt to escape three main pain points:
+                    </p>
+                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li style="margin-bottom: 8px;"><strong style="color: var(--text-primary);">Error loops that waste credits</strong> - Lovable's AI gets stuck in circular conversations while Bolt's Claude Code fixes issues on the first try</li>
+                        <li style="margin-bottom: 8px;"><strong style="color: var(--text-primary);">The 60-70% completion wall</strong> - Lovable projects stall at moderate complexity while Bolt handles unlimited scale</li>
+                        <li><strong style="color: var(--text-primary);">Credit burn on AI mistakes</strong> - Lovable charges for its agent's hallucinations while Bolt's professional AI reduces token waste by up to 90%</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Can Bolt handle larger projects than Lovable?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Yes. In the <strong style="color: var(--text-primary);">Bolt vs. Lovable</strong> scale comparison, Bolt is capable of handling <strong style="color: var(--text-primary);">1,000x larger projects</strong> than Lovable. While Lovable users report hitting a 60-70% completion wall where projects stall, Bolt's frontier AI (Claude Code, Codex) maintains context across large codebases and handles sophisticated logic.
+                    </p>
+                    <p>
+                        Bolt is built on enterprise infrastructure (Netlify, Supabase) that scales to millions of users, making it production-ready from day one.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Does Bolt have fewer errors than Lovable?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Yes. When comparing <strong style="color: var(--text-primary);">Lovable vs Bolt</strong> error rates, Bolt delivers <strong style="color: var(--text-primary);">98% fewer errors</strong> compared to Lovable's homerolled agents. This is because Bolt uses frontier AI agents like Claude Code and Codex, backed by $35B+ in R&D investment from leading AI labs.
+                    </p>
+                    <p>
+                        These professional-grade agents autonomously debug issues and fix them on the first try, eliminating the error loops and hallucinations common with Lovable's homerolled AI.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>What infrastructure does Bolt use compared to Lovable?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        In the <strong style="color: var(--text-primary);">Bolt vs. Lovable</strong> infrastructure comparison, Bolt uses enterprise-grade infrastructure: <strong style="color: var(--text-primary);">Netlify for hosting</strong> (trusted by 72% of Fortune 500) and <strong style="color: var(--text-primary);">Supabase for databases</strong>, authentication, and storage. This infrastructure auto-configures as you build and scales to millions of users.
+                    </p>
+                    <p>
+                        Lovable uses homerolled hosting which has experienced deployment failures and reliability issues. While Lovable does use Supabase for databases, their hosting infrastructure is not enterprise-grade.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Can I edit code directly in Bolt vs Lovable?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Yes. A key difference in the <strong style="color: var(--text-primary);">Lovable vs Bolt</strong> comparison is code access. <strong style="color: var(--text-primary);">Bolt provides a full IDE</strong> with both visual and code editing capabilities - you can "code when you want, prompt when you don't."
+                    </p>
+                    <p>
+                        Lovable only offers a chat-only interface with no direct code access. This means in Bolt, you can fix issues yourself, customize implementations, and have full control over your codebase, while Lovable locks you into conversational prompting only.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.faq-item {
+    background: var(--neutral-700);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid var(--alpha-white-10);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-chevron {
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding: 0 24px 24px 58px;
+}
+</style>
+
+<script>
+function toggleFAQ(button) {
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Open clicked item if it wasn't already open
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+</script>
+
+<!-- Final CTA Section -->
+<section class="final-cta">
+    <div class="container">
+        <div class="final-cta-content">
+            <h2>Stop Getting Stuck at 70%</h2>
+
+            <div class="final-cta-subtitle">
+                <span><strong>98% fewer errors</strong></span>
+                <span>•</span>
+                <span><strong>No completion walls</strong></span>
+                <span>•</span>
+                <span><strong>Enterprise infrastructure</strong></span>
+            </div>
+
+            <div class="final-cta-buttons">
+                <a href="https://bolt.new" class="btn btn-primary">Try Bolt for Free</a>
+                <a href="https://x.com/boltdotnew/status/1973063093849567591" target="_blank" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 6.5L14 10L8 13.5V6.5Z" fill="currentColor"/>
+                    </svg>
+                    See How It Works
+                </a>
+            </div>
+
+            <p class="final-cta-trust">
+                No credit card required • Start building in 60 seconds
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Related Comparisons Section -->
+<section style="padding: var(--spacing-4xl) 0; background: var(--bolt-bg-secondary); border-top: 1px solid var(--alpha-white-10);">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <h2 style="font-size: 32px; font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-sm);">Related Comparisons</h2>
+            <p style="font-size: 16px; color: var(--text-secondary);">See how Bolt compares to other AI coding platforms</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md); max-width: 900px; margin: 0 auto;">
+            <a href="https://bolt.new/bolt-vs-replit" style="display: block; background: var(--neutral-900); border-radius: 12px; padding: var(--spacing-lg); border: 1px solid var(--alpha-white-10); text-decoration: none; transition: all 0.3s ease;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-xs);">Bolt vs. Replit</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">Compare Bolt's frontier AI with Replit's proprietary infrastructure</p>
+            </a>
+
+            <a href="https://bolt.new/bolt-vs-cursor" style="display: block; background: var(--neutral-900); border-radius: 12px; padding: var(--spacing-lg); border: 1px solid var(--alpha-white-10); text-decoration: none; transition: all 0.3s ease;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-xs);">Bolt vs. Cursor</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">See how Bolt's browser-based IDE compares to Cursor's desktop editor</p>
+            </a>
+
+            <a href="https://bolt.new/bolt-vs-v0" style="display: block; background: var(--neutral-900); border-radius: 12px; padding: var(--spacing-lg); border: 1px solid var(--alpha-white-10); text-decoration: none; transition: all 0.3s ease;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-xs);">Bolt vs. v0</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">Compare Bolt's full-stack capabilities with v0's frontend-only approach</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

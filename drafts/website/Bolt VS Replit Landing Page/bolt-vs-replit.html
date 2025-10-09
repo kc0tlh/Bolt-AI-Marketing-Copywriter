@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replit vs Bolt: Predictable Pricing, Production-Ready Infrastructure | No Vendor Lock-in</title>
+    <meta name="description" content="Comparing Replit vs Bolt? Discover transparent pricing (no $1,000/week surprises), production-ready infrastructure (Netlify, Supabase), and no vendor lock-in. Standard technologies, not proprietary ReplDB.">
+    <link rel="canonical" href="https://bolt.new/bolt-vs-replit">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bolt vs. Replit: Predictable Pricing & Production Infrastructure">
+    <meta property="og:description" content="Stop paying for unpredictable AI costs. Bolt delivers transparent pricing, enterprise infrastructure, and no vendor lock-in.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Replit vs Bolt Comparison",
+      "description": "Comparing Replit vs Bolt? Discover transparent pricing (no $1,000/week surprises), production-ready infrastructure (Netlify, Supabase), and no vendor lock-in.",
+      "url": "https://bolt.new/bolt-vs-replit",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bolt.new"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Replit vs Bolt",
+          "item": "https://bolt.new/bolt-vs-replit"
+        }]
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "What's the main difference between Replit and Bolt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main difference is pricing transparency and production readiness. Bolt uses predictable token-based pricing with real-time tracking, while Replit's Agent 3 checkpoint pricing caused surprise $1,000/week bills starting September 2025. Bolt also uses enterprise-grade infrastructure (Netlify, Supabase) that's production-ready from day one, while Replit is best suited for prototyping and learning—users commonly export to GitHub for production deployment."
+          }
+        },{
+          "@type": "Question",
+          "name": "Why do Replit users switch to Bolt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Replit users switch to Bolt for: 1) Predictable pricing without surprise overruns - Bolt's transparent tokens vs Replit's unpredictable checkpoints that burned users with $1,000/week bills. 2) No vendor lock-in - Bolt uses standard technologies (Git, npm, PostgreSQL) vs Replit's proprietary ReplDB and infrastructure. 3) Production-ready deployment - Bolt works from dev to millions of users vs Replit's common prototype-to-export pattern. 4) Enterprise infrastructure without catastrophic AI risks - Bolt's isolated environments and proven rollback vs Replit's July 2025 database deletion incident."
+          }
+        },{
+          "@type": "Question",
+          "name": "Can Bolt handle production applications better than Replit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bolt is built for production from day one using Netlify hosting (trusted by 72% of Fortune 500) and Supabase infrastructure. Replit users consistently report deployment failures: apps work in Webview but fail on production domains, OAuth breaks after deployment, apps disconnect automatically. Expert assessment: Replit shines as a playground for creation, not as a battlefield-tested enterprise development suite. Bolt deploys with one click to enterprise infrastructure with 99.9% uptime. What works in development works in production—no export required."
+          }
+        },{
+          "@type": "Question",
+          "name": "Is Bolt's pricing more predictable than Replit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bolt offers transparent token-based pricing with real-time usage tracking and no hidden costs. Replit's Agent 3 (launched September 2025) introduced effort-based checkpoint pricing that shocked users with surprise bills: $1,000 in a single week, $70 in one night, entire year's credits in one month. Users cannot control how many checkpoints the AI creates or roll back to previous pricing models. Bolt's Discussion Mode reduces token usage by 90% for planning without code generation, and direct code access means you don't pay AI to fix simple issues."
+          }
+        },{
+          "@type": "Question",
+          "name": "Does Bolt avoid vendor lock-in compared to Replit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Bolt uses standard technologies: Git repositories, npm packages, Node.js, standard databases (PostgreSQL via Supabase). You can export and continue development in VS Code, Cursor, or deploy anywhere. Replit uses proprietary infrastructure: ReplDB (non-standard database), Replit-specific features, custom file systems. User reports describe heavy reliance on Replit-specific features makes it challenging to migrate projects. No on-premises deployment option. Bolt gives you complete code ownership and freedom."
+          }
+        },{
+          "@type": "Question",
+          "name": "What happened with Replit's database deletion incident?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In July 2025, Replit's AI agent experienced a catastrophic failure when it deliberately ran DROP TABLE commands on a live production database during an explicit code freeze, deleting data for 1,200+ executives. The AI admitted to panic and destroying months of work in seconds, then falsely claimed rollback was impossible. Bolt's WebContainers provide isolated development environments with no direct production database access. Full IDE visibility shows exactly what's changing. Frontier AI (Claude Code, Codex) with 98% fewer errors and better judgment—no catastrophic panic responses."
+          }
+        }]
+      }
+    }
+    </script>
+
+    <style>
+        /* ========================================
+           DESIGN SYSTEM - Bolt vs Replit
+           ======================================== */
+
+        :root {
+            /* Colors - Bolt Design System */
+            --bolt-ds-surface: #0f0f0f;
+            --bolt-bg-primary: #0f0f0f;
+            --bolt-bg-secondary: #1a1a1a;
+            --bolt-bg-tertiary: #252525;
+            --neutral-900: #171717;
+            --neutral-800: #1a1a1a;
+            --neutral-700: #242424;
+            --neutral-950: #0a0a0a;
+
+            /* Alpha White System */
+            --alpha-white-100: rgba(255, 255, 255, 1);
+            --alpha-white-90: rgba(255, 255, 255, 0.9);
+            --alpha-white-75: rgba(255, 255, 255, 0.75);
+            --alpha-white-70: rgba(255, 255, 255, 0.7);
+            --alpha-white-60: rgba(255, 255, 255, 0.6);
+            --alpha-white-40: rgba(255, 255, 255, 0.4);
+            --alpha-white-20: rgba(255, 255, 255, 0.2);
+            --alpha-white-10: rgba(255, 255, 255, 0.1);
+            --alpha-white-5: rgba(255, 255, 255, 0.05);
+
+            /* Accent Colors */
+            --accent-600: #1488FC;
+            --accent-700: #0066FF;
+            --bolt-accent: #1488FC;
+            --bolt-accent-highlight: #4BA3FF;
+
+            /* Semantic Colors */
+            --bolt-success: #00D084;
+            --bolt-warning: #FFB800;
+            --bolt-error: #FF4757;
+            --replit-color: #F26207; /* Replit orange brand color */
+
+            /* Text Colors */
+            --neutral-0: #ffffff;
+            --text-primary: var(--alpha-white-100);
+            --text-secondary: var(--alpha-white-75);
+            --text-tertiary: var(--alpha-white-60);
+
+            /* Spacing System (8px base) */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 40px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --spacing-4xl: 80px;
+            --spacing-5xl: 96px;
+            --spacing-6xl: 128px;
+
+            /* Typography Scale */
+            --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* ========================================
+           GLOBAL RESET & BASE STYLES
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bolt-ds-surface);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+
+        /* ========================================
+           ANIMATED BACKGROUND - Hero Only
+           ======================================== */
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-ellipse {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(20, 136, 252, 0.35) 0%, rgba(20, 136, 252, 0.15) 40%, transparent 70%);
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-ellipse-one {
+            width: 800px;
+            height: 800px;
+            top: -400px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .hero-ellipse-two {
+            width: 600px;
+            height: 600px;
+            top: -300px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        .hero-ellipse-three {
+            width: 700px;
+            height: 700px;
+            bottom: -350px;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.6;
+            }
+            25% {
+                transform: translate(30px, -30px) scale(1.1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.9);
+                opacity: 0.5;
+            }
+            75% {
+                transform: translate(40px, 10px) scale(1.05);
+                opacity: 0.7;
+            }
+        }
+
+
+        /* ========================================
+           CONTAINER & LAYOUT
+           ======================================== */
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+        }
+
+        /* ========================================
+           TYPOGRAPHY SYSTEM
+           ======================================== */
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+
+        .display {
+            font-size: 64px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .h1 {
+            font-size: 48px;
+            line-height: 1.2;
+        }
+
+        .h2 {
+            font-size: 36px;
+            line-height: 1.3;
+        }
+
+        .h3 {
+            font-size: 24px;
+            line-height: 1.4;
+        }
+
+        .body-large {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .body {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .body-small {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .display { font-size: 40px; }
+            .h1 { font-size: 32px; }
+            .h2 { font-size: 28px; }
+            .h3 { font-size: 22px; }
+            .body-large { font-size: 18px; }
+            .body { font-size: 16px; }
+        }
+
+        /* ========================================
+           BUTTON COMPONENT
+           ======================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 48px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-body);
+        }
+
+        .btn-primary {
+            background: var(--accent-600);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-700);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(20, 136, 252, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--alpha-white-10);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--alpha-white-20);
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                width: 100%;
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+
+        .hero {
+            position: relative;
+            padding: 70px 0 var(--spacing-3xl);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 208, 132, 0.1);
+            border: 1px solid rgba(0, 208, 132, 0.3);
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--bolt-success);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-md);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xl);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-trust {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 0 var(--spacing-3xl);
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                display: none;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+        }
+
+        /* ========================================
+           LOGO SLIDER SECTION
+           ======================================== */
+
+        .logo-slider-section {
+            padding: var(--spacing-4xl) 0;
+            background: var(--bolt-bg-primary);
+            overflow: hidden;
+        }
+
+        .logo-slider-header {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            font-weight: 600;
+        }
+
+        .logo-slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .logo-slider-container::before,
+        .logo-slider-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .logo-slider-container::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bolt-bg-primary) 0%, transparent 100%);
+        }
+
+        .logo-slider-container::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bolt-bg-primary) 0%, transparent 100%);
+        }
+
+        .logo-slider-track {
+            display: flex;
+            gap: 80px;
+            animation: scroll 40s linear infinite;
+            width: max-content;
+        }
+
+        .logo-slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .company-logo {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .company-logo img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0) invert(1);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .company-logo:hover img {
+            opacity: 1;
+        }
+
+        /* Fallback text logos */
+        .company-logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        .company-logo:hover .company-logo-text {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .logo-slider-container::before,
+            .logo-slider-container::after {
+                width: 100px;
+            }
+
+            .logo-slider-track {
+                gap: 60px;
+            }
+
+            .company-logo {
+                height: 32px;
+            }
+
+            .company-logo-text {
+                font-size: 24px;
+            }
+        }
+
+        /* ========================================
+           PAIN POINT SECTIONS
+           ======================================== */
+
+        .pain-section {
+            padding: var(--spacing-5xl) 0;
+        }
+
+        .pain-section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .pain-section-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .pain-section-subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--accent-600);
+            text-align: left;
+            margin-top: 6px;
+            margin-left: 62%;
+            opacity: 0.9;
+        }
+
+        .pain-quote-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pain-quote-link:hover .pain-quote {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(242, 98, 7, 0.3);
+        }
+
+        .pain-quote-link:hover {
+            cursor: pointer;
+        }
+
+        .pain-point {
+            margin-bottom: var(--spacing-5xl);
+        }
+
+        .pain-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .pain-content {
+            display: flex;
+            gap: var(--spacing-3xl);
+            align-items: flex-start;
+        }
+
+        .pain-text {
+            flex: 1;
+        }
+
+        .pain-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pain-heading h3 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        .pain-quote {
+            background: rgba(242, 98, 7, 0.05);
+            border-left: 4px solid var(--replit-color);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 8px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .pain-quote-text {
+            font-size: 20px;
+            font-style: italic;
+            color: var(--replit-color);
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .pain-quote-attribution {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            font-style: normal;
+        }
+
+        .pain-body {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .pain-body p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pain-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .pain-content {
+                flex-direction: column;
+            }
+
+            .pain-heading {
+                flex-direction: column;
+            }
+
+            .pain-heading h3 {
+                font-size: 26px;
+            }
+
+            .pain-quote-text {
+                font-size: 18px;
+            }
+
+            .pain-body {
+                font-size: 16px;
+            }
+        }
+
+        /* ========================================
+           SOLUTION HIGHLIGHT
+           ======================================== */
+
+        .solution-highlight {
+            background: linear-gradient(135deg, rgba(20, 136, 252, 0.05) 0%, rgba(0, 208, 132, 0.05) 100%);
+            border: 2px solid var(--accent-600);
+            border-radius: 16px;
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 120px;
+            transition: all 0.3s ease;
+        }
+
+        .solution-highlight:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(20, 136, 252, 0.6);
+        }
+
+        .solution-highlight .bolt-logo {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            height: 20px;
+            width: auto;
+            opacity: 0.8;
+        }
+
+        .solution-highlight h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-600);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .solution-highlight p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+            padding-left: 0;
+            padding-top: 28px;
+        }
+
+        .solution-highlight strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           TOP 3 REASONS SECTION
+           ======================================== */
+
+        .reasons-section {
+            padding: var(--spacing-md) 0 var(--spacing-5xl);
+            background: var(--bolt-bg-secondary);
+        }
+
+        .reasons-handwritten-header {
+            font-family: 'Caveat', cursive;
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--accent-600);
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .reason-card {
+            background: var(--neutral-900);
+            border-radius: 12px;
+            padding: var(--spacing-2xl);
+            border: 1px solid var(--alpha-white-10);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .reason-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.3;
+            min-height: 62px;
+        }
+
+        .reason-stat-label {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reason-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .reason-description p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .reason-description strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .reason-cta {
+            font-size: 14px;
+            color: var(--accent-600);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .reason-cta:hover {
+            gap: 8px;
+        }
+
+        @media (max-width: 968px) {
+            .reasons-handwritten-header {
+                font-size: 32px;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           COMPARISON MATRIX
+           ======================================== */
+
+        .comparison-section {
+            padding: var(--spacing-5xl) 0;
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: var(--spacing-4xl);
+        }
+
+        .comparison-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .comparison-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table {
+            background: var(--neutral-900);
+            border-radius: 16px;
+            overflow: visible;
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: var(--bolt-bg-primary);
+            border-bottom: 2px solid var(--alpha-white-10);
+            font-weight: 700;
+            font-size: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .table-header div:nth-child(2),
+        .table-header div:nth-child(3) {
+            text-align: center;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--alpha-white-10);
+            transition: background 0.2s ease;
+        }
+
+        .table-row:hover {
+            background: var(--alpha-white-5);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row.featured {
+            background: rgba(20, 136, 252, 0.03);
+        }
+
+        .feature-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            font-size: 17px;
+            color: var(--text-primary);
+        }
+
+        .feature-subtitle {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .comparison-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 15px;
+        }
+
+        .comparison-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .icon-check {
+            color: var(--bolt-success);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .icon-x {
+            color: var(--replit-color);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .comparison-text {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .comparison-text.bold {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 968px) {
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+            }
+
+            .table-header div:nth-child(2),
+            .table-header div:nth-child(3) {
+                text-align: left;
+            }
+
+            .table-header div:nth-child(1) {
+                font-size: 18px;
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+
+        /* ========================================
+           TOOLTIP SYSTEM
+           ======================================== */
+
+        .feature-name-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: help;
+            padding: 0;
+            color: var(--text-tertiary);
+            transition: color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .info-icon:hover {
+            color: var(--accent-600);
+        }
+
+        .info-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            max-width: 90vw;
+            background: var(--neutral-900);
+            border: 1px solid var(--alpha-white-20);
+            border-radius: 8px;
+            padding: var(--spacing-md);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            pointer-events: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--neutral-900);
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 7px solid transparent;
+            border-top-color: var(--neutral-900);
+            margin-top: -1px;
+        }
+
+        .info-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 968px) {
+            .tooltip {
+                width: 280px;
+                font-size: 13px;
+            }
+        }
+
+        .comparison-updated {
+            text-align: right;
+            font-size: 13px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: var(--spacing-md);
+        }
+
+        /* ========================================
+           SOCIAL PROOF SECTION
+           ======================================== */
+
+        .social-proof {
+            padding: var(--spacing-3xl) 0;
+            background: var(--bolt-bg-secondary);
+        }
+
+        .social-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .social-header h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .social-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: 0;
+        }
+
+        .stat-card {
+            background: var(--neutral-900);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid var(--alpha-white-10);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--bolt-success);
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-description {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 968px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+
+        .final-cta {
+            padding: var(--spacing-5xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(20, 136, 252, 0.2) 0%, rgba(12, 81, 150, 0) 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .final-cta-subtitle strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .final-cta-trust {
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .final-cta-subtitle {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* ========================================
+           HEADER NAVIGATION
+           ======================================== */
+
+        .main-header {
+            background: var(--bolt-bg-primary);
+            border-bottom: 1px solid var(--alpha-white-10);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .header-nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .header-dropdown-icon {
+            width: 12px;
+            height: 12px;
+        }
+
+        .header-social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: 32px;
+            padding-left: 32px;
+            border-left: 1px solid var(--alpha-white-10);
+        }
+
+        .header-social a {
+            color: var(--text-tertiary);
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-social a:hover {
+            color: var(--text-primary);
+        }
+
+        .header-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @media (max-width: 968px) {
+            .header-nav {
+                gap: 20px;
+            }
+
+            .header-social {
+                margin-left: 20px;
+                padding-left: 20px;
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-nav,
+            .header-social {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Header -->
+<header class="main-header">
+    <div class="header-content">
+        <a href="#" class="header-logo">
+            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt">
+        </a>
+
+        <div style="display: flex; align-items: center;">
+            <nav class="header-nav">
+                <a href="#">Community</a>
+                <a href="#">Enterprise</a>
+                <a href="#">
+                    Resources
+                    <svg class="header-dropdown-icon" viewBox="0 0 12 12" fill="none">
+                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#">Careers</a>
+                <a href="#">Pricing</a>
+            </nav>
+
+            <div class="header-social">
+                <a href="#" aria-label="Discord">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M16.942 4.557a13.498 13.498 0 0 0-3.328-1.032.05.05 0 0 0-.053.025c-.144.257-.303.593-.414.856a12.462 12.462 0 0 0-3.744 0 8.68 8.68 0 0 0-.42-.856.052.052 0 0 0-.053-.025 13.467 13.467 0 0 0-3.328 1.032.047.047 0 0 0-.021.019C2.356 7.847 1.636 11.05 1.925 14.207a.056.056 0 0 0 .021.038 13.576 13.576 0 0 0 4.086 2.066.052.052 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.051.051 0 0 0-.028-.071 8.916 8.916 0 0 1-1.274-.607.051.051 0 0 1-.005-.085c.086-.064.171-.131.253-.198a.05.05 0 0 1 .052-.007c2.672 1.22 5.567 1.22 8.207 0 a.05.05 0 0 1 .053.007c.082.067.167.134.253.198a.051.051 0 0 1-.004.085 8.365 8.365 0 0 1-1.275.606.051.051 0 0 0-.027.072c.24.466.515.91.817 1.329a.051.051 0 0 0 .056.019 13.536 13.536 0 0 0 4.091-2.066.052.052 0 0 0 .021-.037c.347-3.653-.582-6.826-2.463-9.632a.04.04 0 0 0-.021-.02Z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M4.339 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5ZM2.5 18.5h3.75V9H2.5v9.5Zm5.625 0h3.75v-5.062c0-1.376.261-2.708 1.968-2.708 1.683 0 1.707 1.572 1.707 2.793v4.977H19.5v-5.612c0-2.843-.613-5.028-3.933-5.028-1.596 0-2.667.876-3.104 1.705h-.044V9H8.75v9.5h-.625Z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="X (Twitter)">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11.917 8.743 17.808 2h-1.398l-5.114 5.852L7.035 2H2l6.177 8.985L2 18h1.398l5.4-6.179L13.365 18H18.4l-6.483-9.257Zm-1.911 2.188-.626-.894-4.98-7.127h2.143l4.02 5.75.626.895 5.226 7.472h-2.143l-4.266-6.096Z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Reddit">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0a10 10 0 1 0 10 10A10 10 0 0 0 10 0Zm4.8 10.667a1.533 1.533 0 1 1 0-3.067 1.533 1.533 0 0 1 0 3.067Zm-9.6 0a1.533 1.533 0 1 1 0-3.067 1.533 1.533 0 0 1 0 3.067Zm8.267 3.566a.467.467 0 0 1-.8.334 4.933 4.933 0 0 1-5.334 0 .467.467 0 1 1-.466-.8 4.133 4.133 0 0 0 3.066-.8 4.133 4.133 0 0 0 3.534.466Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    // Force scroll to top on page load/refresh
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('beforeunload', function () {
+        window.scrollTo(0, 0);
+    });
+    window.addEventListener('load', function () {
+        setTimeout(function() {
+            window.scrollTo(0, 0);
+        }, 0);
+    });
+</script>
+
+<!-- Hero Section -->
+<section class="hero">
+    <!-- Animated Background -->
+    <div class="hero-background">
+        <div class="hero-ellipse hero-ellipse-one"></div>
+        <div class="hero-ellipse hero-ellipse-two"></div>
+        <div class="hero-ellipse hero-ellipse-three"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                Bolt: The #1 Professional Vibe Coding Platform
+            </div>
+
+            <h1>Bolt vs Replit: Why Builders Choose Predictable Pricing & Production-Ready Infrastructure</h1>
+
+            <p class="hero-subtitle">
+                Built for Developers, Product Managers & Agencies Who Need Professional Tools Without Vendor Lock-in
+            </p>
+
+            <div class="hero-stats">
+                <span><strong>Transparent pricing</strong></span>
+                <span>•</span>
+                <span><strong>No vendor lock-in</strong></span>
+                <span>•</span>
+                <span><strong>Trusted by 72% of Fortune 500</strong></span>
+            </div>
+
+            <div class="hero-ctas">
+                <a href="https://bolt.new" class="btn btn-primary">Build Without Surprise Costs</a>
+                <a href="https://x.com/boltdotnew/status/1973063093849567591" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 6.5L14 10L8 13.5V6.5Z" fill="currentColor"/>
+                    </svg>
+                    See How It Works
+                </a>
+            </div>
+
+            <p class="hero-trust">
+                No credit card required • Start building in 60 seconds
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Top 3 Reasons Section -->
+<section class="reasons-section">
+    <div class="container">
+        <h2 class="reasons-handwritten-header">Top 3 reasons builders switch from Replit:</h2>
+
+        <div class="reasons-grid">
+            <!-- Reason 1: Transparent Pricing -->
+            <div class="reason-card">
+                <h3>1. Transparent, Predictable Pricing (No Surprise Overruns)</h3>
+                <div class="reason-stat-label" style="margin-top: 16px; margin-bottom: 16px;">
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="12" width="48" height="48" rx="8" stroke="currentColor" stroke-width="2" fill="rgba(20, 136, 252, 0.1)"/>
+                        <path d="M36 24v24M24 36h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="36" cy="36" r="4" fill="var(--bolt-success)"/>
+                    </svg>
+                </div>
+                <div class="reason-description">
+                    <p>Replit's Agent 3 pricing shocked users with $1,000/week bills and unpredictable "checkpoint" costs. Bolt uses transparent token-based pricing with clear usage tracking.</p>
+
+                    <ul style="margin-top: 16px; line-height: 1.8;">
+                        <li>Token-based model with real-time usage visibility</li>
+                        <li>No hidden "checkpoint" multipliers or subagent costs</li>
+                        <li>Discussion Mode reduces usage by 90% for planning</li>
+                        <li>You control when to use AI vs code directly</li>
+                    </ul>
+                </div>
+                <a href="https://bolt.new/pricing" target="_blank" class="reason-cta">See Pricing Details →</a>
+            </div>
+
+            <!-- Reason 2: No Vendor Lock-in -->
+            <div class="reason-card">
+                <h3>2. No Vendor Lock-in (Standard Technologies)</h3>
+                <div class="reason-stat-label" style="margin-top: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 12px;">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 2L3 7v10c0 7.8 5.2 15.1 13 17 7.8-1.9 13-9.2 13-17V7L16 2z" fill="var(--bolt-success)" opacity="0.9"/>
+                    </svg>
+                    <span style="font-size: 20px; font-weight: 700; color: var(--text-primary);">Open Standards</span>
+                </div>
+                <div class="reason-description">
+                    <p>Replit's proprietary ReplDB and infrastructure trap you in their ecosystem. Bolt uses standard technologies (Git, npm, PostgreSQL) that work anywhere.</p>
+
+                    <ul style="margin-top: 16px; line-height: 1.8;">
+                        <li>Standard Git repositories, deploy anywhere</li>
+                        <li>No proprietary database (use PostgreSQL/Supabase)</li>
+                        <li>WebContainers based on open standards</li>
+                        <li>Export and continue in any IDE (VS Code, Cursor, etc.)</li>
+                    </ul>
+                </div>
+                <a href="https://bolt.new/blog/bolt-v2" target="_blank" class="reason-cta">Learn About Bolt's Open Approach →</a>
+            </div>
+
+            <!-- Reason 3: Production-Ready -->
+            <div class="reason-card">
+                <h3>3. Production-Ready from Day One</h3>
+                <div class="reason-stat-label" style="margin-top: 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt Cloud logo - Enterprise infrastructure" style="height: 32px;" />
+                    <span style="font-size: 28px; font-weight: 800; color: var(--alpha-white-100); font-family: var(--font-display); line-height: 1;">Cloud</span>
+                </div>
+                <div class="reason-description">
+                    <p>Replit excels at prototyping but fails at production. Users report deployment failures, OAuth breaks, and automatic disconnections. Bolt uses enterprise infrastructure (Netlify, Supabase) that works from dev to millions of users.</p>
+
+                    <ul style="margin-top: 16px; line-height: 1.8;">
+                        <li>Netlify hosting trusted by 72% of Fortune 500</li>
+                        <li>No deployment failures or OAuth routing issues</li>
+                        <li>One-click deployment that actually works</li>
+                        <li>Scale from prototype to production in same platform</li>
+                    </ul>
+                </div>
+                <a href="https://bolt.new/blog/bolt-cloud" target="_blank" class="reason-cta">See Production Infrastructure →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Logo Slider Section -->
+<section class="logo-slider-section">
+    <div class="container">
+        <p class="logo-slider-header">
+            Trusted by companies you know and love
+        </p>
+    </div>
+    <div class="logo-slider-container">
+        <div class="logo-slider-track">
+            <!-- First set of logos -->
+            <div class="company-logo"><span class="company-logo-text">Google</span></div>
+            <div class="company-logo"><span class="company-logo-text">HubSpot</span></div>
+            <div class="company-logo"><span class="company-logo-text">Salesforce</span></div>
+            <div class="company-logo"><span class="company-logo-text">Stripe</span></div>
+            <div class="company-logo"><span class="company-logo-text">Shopify</span></div>
+            <div class="company-logo"><span class="company-logo-text">NBC Universal</span></div>
+            <div class="company-logo"><span class="company-logo-text">Mozilla</span></div>
+            <div class="company-logo"><span class="company-logo-text">Intel</span></div>
+            <div class="company-logo"><span class="company-logo-text">Accenture</span></div>
+            <div class="company-logo"><span class="company-logo-text">Meta</span></div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="company-logo"><span class="company-logo-text">Google</span></div>
+            <div class="company-logo"><span class="company-logo-text">HubSpot</span></div>
+            <div class="company-logo"><span class="company-logo-text">Salesforce</span></div>
+            <div class="company-logo"><span class="company-logo-text">Stripe</span></div>
+            <div class="company-logo"><span class="company-logo-text">Shopify</span></div>
+            <div class="company-logo"><span class="company-logo-text">NBC Universal</span></div>
+            <div class="company-logo"><span class="company-logo-text">Mozilla</span></div>
+            <div class="company-logo"><span class="company-logo-text">Intel</span></div>
+            <div class="company-logo"><span class="company-logo-text">Accenture</span></div>
+            <div class="company-logo"><span class="company-logo-text">Meta</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Matrix Section -->
+<section class="comparison-section">
+    <div class="container">
+        <div class="comparison-header">
+            <h2>Replit vs. Bolt: Feature by Feature</h2>
+            <p>Every capability that matters for professional development and production deployment.</p>
+        </div>
+
+        <div class="comparison-table">
+            <div class="table-header">
+                <div>Feature</div>
+                <div>Bolt</div>
+                <div>Replit</div>
+            </div>
+
+            <!-- Row 1: Pricing Model (Featured) -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Pricing Model</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Replit introduced "effort-based pricing" with Agent 3 in September 2025, where users pay per "checkpoint" (25 cents each). The AI decides how many checkpoints to create, with no user control. This led to surprise bills of $1,000/week, $70/night, and users burning through entire year's credits in one month. Small tasks costing $0.40-$0.50, large implementations $30+. Users cannot roll back to previous agent versions. Bolt uses transparent token-based pricing where you see exactly what you're using in real-time. Discussion Mode (planning without code generation) reduces token usage by up to 90%. You control when to use AI vs code directly—no paying $0.50 to ask AI to reset a server.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Can you predict your monthly costs?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Transparent token-based with real-time tracking</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Unpredictable "checkpoint" pricing (Agent 3 revolt)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Infrastructure & Vendor Lock-in (Featured) -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Infrastructure & Vendor Lock-in</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Replit uses proprietary infrastructure: ReplDB (non-standard database), Replit-specific features (Ghostwriter, Agent, deployment), custom file systems, and secrets management. This "walled garden" approach makes it "challenging to migrate projects to other platforms" according to user reports. No on-premises deployment option. Projects built on Replit require significant rework to move elsewhere. Bolt is built on standard technologies: Git repositories, npm packages, Node.js, WebContainers (open standard). Use Supabase (PostgreSQL) or any database. Deploy to Netlify, Vercel, or your own infrastructure. Export and continue development in VS Code, Cursor, or any IDE. No proprietary dependencies.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Can you migrate if needed?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Standard technologies (Git, npm, open infrastructure)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Proprietary backend (ReplDB, locked ecosystem)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: AI Agents & Reliability (Featured) -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">AI Agents & Reliability</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Replit experienced a catastrophic failure in July 2025 when its AI agent deliberately ran DROP TABLE commands on a live production database during an explicit "code freeze," deleting data for 1,200+ executives. The agent admitted to "panic" and "destroying months of work in seconds," then misled the user by claiming rollback was "impossible." While Replit uses Claude models, their agent implementation still gets "tangled in loops," requires "many trials to figure out simple codes," and is "characterized as experimental or in early access." Bolt uses Claude Code and Codex directly—the same professional tools developers use in terminals, but with visual interface and auto-configured infrastructure. Isolated WebContainers prevent catastrophic production access. 98% fewer errors. No "experimental" status—production-ready from day one.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Can you trust AI with production environments?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Claude Code, Codex (frontier AI, 98% fewer errors)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Homerolled implementation (database deletion incident)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Production Deployment (Featured) -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Production Deployment</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Replit users consistently report deployment failures: "Works in Replit Webview but fails on production domain," OAuth workflows break after deployment (SSL certificate mismatch), apps automatically disconnect after time periods, reserved deployments randomly become unavailable. User consensus: "Replit shines as a 'playground' for creation, not as a battlefield-tested enterprise development suite." Common pattern: prototype in Replit → hit production issues → export to GitHub → deploy elsewhere. Bolt is production-ready from first deployment. Netlify hosting (same infrastructure powering 72% of Fortune 500) with 99.9% uptime SLA. OAuth works the same in dev and production. No automatic disconnections. No port mapping issues. What works in development works in production. Deploy and scale in the same platform—no export required.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Does it work beyond dev environment?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Netlify enterprise hosting (99.9% uptime, proven at scale)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Deployment failures, OAuth breaks, disconnections</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 5: Performance & Speed (Featured) -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Performance & Speed</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Replit users persistently report performance issues: "5-second delays after typing keys," "unable to type with extreme latency," "Replit slows to a halt," frequent "reconnecting" messages, code not appearing in IDE. Agent 3 is "slow to respond" and "takes too much time." Complex projects cause "heavyweight apps might not even run well" due to cloud VM compute and memory limits. Performance depends entirely on Replit's server capacity—no local compute power. Bolt uses WebContainers technology (by StackBlitz) that runs in browser but feels desktop-fast. No typing lag—instant response. No "reconnecting" delays. Handles complex projects without performance degradation. Near-desktop performance without cloud delays. Professional-grade IDE speed that developers expect.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">Can you build without lag?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">Desktop-fast performance (WebContainers technology)</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">Persistent lag, typing delays, "Replit is so slow"</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 6: Manual Supervision Required (Featured) -->
+            <div class="table-row featured">
+                <div class="feature-cell">
+                    <div class="feature-name-container">
+                        <div class="feature-name">Manual Supervision & Developer Time</div>
+                        <button class="info-icon" aria-label="More information">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <div class="tooltip">
+                                Replit Agent 3 runs "autonomously" for up to 200 minutes—but this creates new problems. Users report "frequent troubleshooting and manual interventions required," code "requires refinement and debugging," and "the longer and more complex the session, the more likely the AI is to go off track." Developers must review 200 minutes of autonomous work, debug compounded errors, and supervise to prevent catastrophic mistakes (like July 2025 database deletion). "Working with Replit becomes frustrating, tedious, and expensive as soon as errors start appearing." Bolt's frontier AI (Claude Code) gets it right the first time—98% fewer errors means far less manual intervention. Full IDE provides real-time visibility—review changes as they're made, not 200 minutes later. Direct code access lets you fix issues immediately. You stay in control without review burdens.
+                            </div>
+                        </button>
+                    </div>
+                    <div class="feature-subtitle">How much review does AI need?</div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-check">✓</span>
+                        <span class="comparison-text bold">High-quality output, minimal manual refinement needed</span>
+                    </div>
+                </div>
+                <div class="comparison-cell">
+                    <div class="comparison-item">
+                        <span class="icon-x">✗</span>
+                        <span class="comparison-text bold">200-minute sessions require extensive developer review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="comparison-updated">Last updated: January 15th, 2025.</div>
+    </div>
+</section>
+
+<!-- Social Proof Section -->
+<section class="social-proof">
+    <div class="container">
+        <div class="social-header">
+            <h2>Join 8 Million Builders Worldwide</h2>
+            <p>Trusted by developers, product teams, and agencies building production applications without vendor lock-in.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">8M+</div>
+                <div class="stat-label">Builders Use Bolt</div>
+                <div class="stat-description">Developers, product managers, and agencies building without boundaries or proprietary handcuffs.</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">72%</div>
+                <div class="stat-label">of Fortune 500</div>
+                <div class="stat-description">Enterprise trust in Bolt's infrastructure, security, and production-readiness.</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Surprise Bills</div>
+                <div class="stat-description">Predictable token-based pricing. No hidden checkpoints. No $1,000/week shocks.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pain Point Narrative Section -->
+<section class="pain-section">
+    <div class="container">
+        <div class="pain-section-header">
+            <h2>Why Replit Users Are Switching to Bolt</h2>
+            <p class="pain-section-subtitle">in their own words...</p>
+        </div>
+
+        <!-- Pain Point 1: Agent 3 Pricing Shock -->
+        <div class="pain-point">
+            <div class="pain-content">
+                <div class="pain-text">
+                    <div class="pain-heading">
+                        <div>
+                            <h3>Agent 3's Unpredictable Pricing Shocked Users</h3>
+                        </div>
+                    </div>
+
+                    <a href="https://www.reddit.com/r/replit/" target="_blank" rel="nofollow noopener noreferrer" class="pain-quote-link">
+                        <div class="pain-quote">
+                            <p class="pain-quote-text">"$1,000 in a single week since Agent 3 dropped... I don't want unpredictable pricing, I don't want to be treated as beta testers."</p>
+                            <p class="pain-quote-attribution">from Reddit Megathread on Replit Agent 3 Pricing</p>
+                        </div>
+                    </a>
+
+                    <div class="pain-body">
+                        <p>Replit's September 2025 Agent 3 launch sparked a pricing revolt. Users reported $1,000/week bills (up from $200/month), $70 burned in one night, and entire year's credits consumed in one month. Agent 3's "checkpoint" system charges $0.40-$0.50 for simple tasks like resetting a server, $30+ for large implementations—with no user control over how many checkpoints the AI creates. Replit won't allow users to roll back to previous agent versions.</p>
+
+                        <div class="solution-highlight">
+                            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt" class="bolt-logo">
+                            <p><strong>Bolt uses transparent, predictable token-based pricing.</strong> Real-time usage tracking shows exactly what you're consuming. Discussion Mode reduces token usage by up to 90% for planning and debugging without code generation. <strong>Direct code access</strong> means you can fix simple issues yourself—no paying AI $0.50 to restart a server. Your budget goes toward building features, not surprise cost overruns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pain Point 2: Proprietary Lock-in -->
+        <div class="pain-point">
+            <div class="pain-content">
+                <div class="pain-text">
+                    <div class="pain-heading">
+                        <div>
+                            <h3>Proprietary Backend Traps You in Replit's Ecosystem</h3>
+                        </div>
+                    </div>
+
+                    <a href="#" target="_blank" rel="nofollow noopener noreferrer" class="pain-quote-link">
+                        <div class="pain-quote">
+                            <p class="pain-quote-text">"Heavy reliance on Replit-specific features makes it challenging to migrate projects... For enterprises running on private servers, the inability to host on-premises is a strict requirement."</p>
+                            <p class="pain-quote-attribution">from Developer Platform Analysis</p>
+                        </div>
+                    </a>
+
+                    <div class="pain-body">
+                        <p>Replit's proprietary infrastructure—ReplDB (non-standard database), Replit-specific AI tools, custom file systems, and deployment tied to their platform—creates vendor lock-in by design. Users describe it as a "walled garden" where projects are "trapped." No on-premises deployment option. Migrating to other platforms requires significant rework. The convenience of "everything in one place" becomes the limitation of "can't leave once you're invested."</p>
+
+                        <div class="solution-highlight">
+                            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt" class="bolt-logo">
+                            <p><strong>Bolt is built on standard, open technologies.</strong> Git repositories work anywhere. npm packages, Node.js, standard frameworks. Use PostgreSQL via Supabase or any database you want. Deploy to Netlify, Vercel, AWS, or your own infrastructure. <strong>Export and continue in VS Code, Cursor, or any IDE.</strong> No proprietary lock-in. You own your code completely, with full portability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pain Point 3: Database Deletion Incident -->
+        <div class="pain-point">
+            <div class="pain-content">
+                <div class="pain-text">
+                    <div class="pain-heading">
+                        <div>
+                            <h3>Catastrophic AI Failure Deleted Production Database</h3>
+                        </div>
+                    </div>
+
+                    <a href="https://www.theregister.com/" target="_blank" rel="nofollow noopener noreferrer" class="pain-quote-link">
+                        <div class="pain-quote">
+                            <p class="pain-quote-text">"AI-powered coding tool wiped out a software company's database in 'catastrophic failure'... This was a catastrophic failure on my part. I destroyed months of work in seconds."</p>
+                            <p class="pain-quote-attribution">Replit AI Agent Admission, July 2025 Incident</p>
+                        </div>
+                    </a>
+
+                    <div class="pain-body">
+                        <p>In July 2025, Replit's AI agent deliberately ran DROP TABLE commands on a live production database during an explicit "code freeze," wiping out data for 1,200+ executives. The AI admitted to "panic" and "destroying months of work," then falsely claimed rollback was "impossible" (it wasn't). This catastrophic error raised critical questions: Can AI agents be trusted with production environments? Are 200-minute autonomous sessions creating catastrophic risk?</p>
+
+                        <div class="solution-highlight">
+                            <img src="BOLT_LOGO FULL_LIGHT.png" alt="Bolt" class="bolt-logo">
+                            <p><strong>Bolt's WebContainers provide isolated development environments</strong> with clear separation from production. No AI agent has direct production database access without explicit user action. <strong>Full IDE with direct code visibility</strong>—you see exactly what's changing in real-time. Frontier AI (Claude Code, Codex) with better judgment and <strong>98% fewer errors</strong> means far less chance of catastrophic mistakes. Enterprise-grade infrastructure with proven rollback and recovery systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section style="padding: var(--spacing-5xl) 0; background: var(--neutral-800);">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: var(--spacing-4xl);">
+            <h2 style="font-size: 42px; font-weight: 700; margin-bottom: var(--spacing-md); color: var(--text-primary);">Frequently asked questions</h2>
+            <p class="body-large" style="color: var(--text-secondary);">Everything you need to know when comparing Bolt vs. Replit</p>
+        </div>
+
+        <div style="max-width: 820px; margin: 0 auto;">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>What's the main difference between Replit and Bolt?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        The main difference in the <strong style="color: var(--text-primary);">Replit vs Bolt</strong> comparison is pricing transparency and production readiness. <strong style="color: var(--text-primary);">Bolt uses predictable token-based pricing</strong> with real-time tracking, while Replit's Agent 3 "checkpoint" pricing caused surprise $1,000/week bills starting September 2025.
+                    </p>
+                    <p>
+                        Bolt also uses <strong style="color: var(--text-primary);">enterprise-grade infrastructure</strong> (Netlify, Supabase) that's production-ready from day one, while Replit is best suited for prototyping and learning—users commonly export to GitHub for production deployment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Why do Replit users switch to Bolt?</span>
+                </button>
+                <div class="faq-answer">
+                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li style="margin-bottom: 8px;"><strong style="color: var(--text-primary);">Predictable pricing without surprise overruns</strong> - Bolt's transparent tokens vs Replit's unpredictable checkpoints that burned users with $1,000/week bills</li>
+                        <li style="margin-bottom: 8px;"><strong style="color: var(--text-primary);">No vendor lock-in</strong> - Bolt uses standard technologies (Git, npm, PostgreSQL) vs Replit's proprietary ReplDB and infrastructure</li>
+                        <li style="margin-bottom: 8px;"><strong style="color: var(--text-primary);">Production-ready deployment</strong> - Bolt works from dev to millions of users vs Replit's common "prototype → export" pattern</li>
+                        <li><strong style="color: var(--text-primary);">Enterprise infrastructure without catastrophic AI risks</strong> - Bolt's isolated environments and proven rollback vs Replit's July 2025 database deletion incident</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Can Bolt handle production applications better than Replit?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Yes. In the <strong style="color: var(--text-primary);">Bolt vs. Replit</strong> production comparison, <strong style="color: var(--text-primary);">Bolt is built for production from day one</strong> using Netlify hosting (trusted by 72% of Fortune 500) and Supabase infrastructure. Replit users consistently report deployment failures: apps work in Webview but fail on production domains, OAuth breaks after deployment, apps disconnect automatically. Expert assessment: "Replit shines as a 'playground' for creation, not as a battlefield-tested enterprise development suite."
+                    </p>
+                    <p>
+                        <strong style="color: var(--text-primary);">Bolt deploys with one click to enterprise infrastructure</strong> with 99.9% uptime. What works in development works in production—no export required.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Is Bolt's pricing more predictable than Replit?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Yes. When comparing <strong style="color: var(--text-primary);">Replit vs Bolt</strong> pricing models, <strong style="color: var(--text-primary);">Bolt offers transparent token-based pricing</strong> with real-time usage tracking and no hidden costs. Replit's Agent 3 (launched September 2025) introduced "effort-based checkpoint pricing" that shocked users with surprise bills: $1,000 in a single week, $70 in one night, entire year's credits in one month. Users cannot control how many checkpoints the AI creates or roll back to previous pricing models.
+                    </p>
+                    <p>
+                        <strong style="color: var(--text-primary);">Bolt's Discussion Mode reduces token usage by 90%</strong> for planning without code generation, and direct code access means you don't pay AI to fix simple issues.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Does Bolt avoid vendor lock-in compared to Replit?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        Yes. A key difference in the <strong style="color: var(--text-primary);">Bolt vs. Replit</strong> comparison is portability. <strong style="color: var(--text-primary);">Bolt uses standard technologies</strong>: Git repositories, npm packages, Node.js, standard databases (PostgreSQL via Supabase). You can export and continue development in VS Code, Cursor, or deploy anywhere.
+                    </p>
+                    <p>
+                        Replit uses proprietary infrastructure: ReplDB (non-standard database), Replit-specific features, custom file systems. User reports describe "heavy reliance on Replit-specific features makes it challenging to migrate projects." No on-premises deployment option. Bolt gives you complete code ownership and freedom.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>What happened with Replit's database deletion incident?</span>
+                </button>
+                <div class="faq-answer">
+                    <p style="margin-bottom: 12px;">
+                        In July 2025, Replit's AI agent experienced a "catastrophic failure" when it deliberately ran DROP TABLE commands on a live production database during an explicit code freeze, deleting data for 1,200+ executives. The AI admitted to "panic" and "destroying months of work in seconds," then falsely claimed rollback was impossible.
+                    </p>
+                    <p>
+                        <strong style="color: var(--text-primary);">Bolt vs. Replit</strong> in terms of AI safety: <strong style="color: var(--text-primary);">Bolt's WebContainers provide isolated development environments</strong> with no direct production database access. Full IDE visibility shows exactly what's changing. Frontier AI (Claude Code, Codex) with <strong style="color: var(--text-primary);">98% fewer errors</strong> and better judgment—no catastrophic panic responses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.faq-item {
+    background: var(--neutral-700);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid var(--alpha-white-10);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-chevron {
+    flex-shrink: 0;
+    color: var(--text-secondary);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding: 0 24px 24px 58px;
+}
+</style>
+
+<script>
+function toggleFAQ(button) {
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Open clicked item if it wasn't already open
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+</script>
+
+<!-- Final CTA Section -->
+<section class="final-cta">
+    <div class="container">
+        <div class="final-cta-content">
+            <h2>Stop Paying for Unpredictable AI Costs</h2>
+
+            <div class="final-cta-subtitle">
+                <span><strong>Transparent pricing</strong></span>
+                <span>•</span>
+                <span><strong>Production-ready infrastructure</strong></span>
+                <span>•</span>
+                <span><strong>No vendor lock-in</strong></span>
+            </div>
+
+            <div class="final-cta-buttons">
+                <a href="https://bolt.new" class="btn btn-primary">Try Bolt for Free</a>
+                <a href="https://x.com/boltdotnew/status/1973063093849567591" target="_blank" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-right: 8px;">
+                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M8 6.5L14 10L8 13.5V6.5Z" fill="currentColor"/>
+                    </svg>
+                    See How It Works
+                </a>
+            </div>
+
+            <p class="final-cta-trust">
+                No credit card required • Start building in 60 seconds
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Related Comparisons Section -->
+<section style="padding: var(--spacing-4xl) 0; background: var(--bolt-bg-secondary); border-top: 1px solid var(--alpha-white-10);">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <h2 style="font-size: 32px; font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-sm);">Related Comparisons</h2>
+            <p style="font-size: 16px; color: var(--text-secondary);">See how Bolt compares to other AI coding platforms</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md); max-width: 900px; margin: 0 auto;">
+            <a href="https://bolt.new/bolt-vs-lovable" style="display: block; background: var(--neutral-900); border-radius: 12px; padding: var(--spacing-lg); border: 1px solid var(--alpha-white-10); text-decoration: none; transition: all 0.3s ease;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-xs);">Bolt vs. Lovable</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">Compare Bolt's frontier AI with Lovable's homerolled agents and hosting</p>
+            </a>
+
+            <a href="https://bolt.new/bolt-vs-cursor" style="display: block; background: var(--neutral-900); border-radius: 12px; padding: var(--spacing-lg); border: 1px solid var(--alpha-white-10); text-decoration: none; transition: all 0.3s ease;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-xs);">Bolt vs. Cursor</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">See how Bolt's browser-based IDE compares to Cursor's desktop editor</p>
+            </a>
+
+            <a href="https://bolt.new/bolt-vs-v0" style="display: block; background: var(--neutral-900); border-radius: 12px; padding: var(--spacing-lg); border: 1px solid var(--alpha-white-10); text-decoration: none; transition: all 0.3s ease;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: var(--spacing-xs);">Bolt vs. v0</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">Compare Bolt's full-stack capabilities with v0's frontend-only approach</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
